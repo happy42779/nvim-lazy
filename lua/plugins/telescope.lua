@@ -1,25 +1,28 @@
 return {
-	'nvim-telescope/telescope.nvim',
+	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
 	version = false,
 	dependencies = {
-		'nvim-lua/plenary.nvim',
-		'stevearc/aerial.nvim'
+		"nvim-lua/plenary.nvim",
+		{
+			"stevearc/aerial.nvim",
+			config = true,
+		},
 	},
 	keys = {
 		-- find
-		{ "<leader>ff", "<Cmd>Telescope find_files<CR>",           desc = "Find files" },
-		{ "<leader>fg", "<Cmd>Telescope live_grep<CR>",            desc = "Grep search" },
-		{ "<leader>fn", "<Cmd>Telescope aerial<CR>",               desc = "List Functions" },
+		{ "<leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Find files" },
+		{ "<leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Grep search" },
+		{ "<leader>fn", "<Cmd>Telescope aerial<CR>", desc = "List Functions" },
 		{ "<leader>fs", "<Cmd>Telescope lsp_document_symbols<CR>", desc = "Find symbols" },
-		{ "<leader>fc", "<Cmd>Telescope commands<CR>",             desc = "Find commands" },
-		{ "<leader>ss", "<Cmd>Telescope grep_string<CR>",          desc = "Grep strings" },
-		{ "<leader>:",  "<Cmd>Telescope command_history<CR>",      desc = "List commands history" },
-		{ "<leader>fh", "<Cmd>Telescope help_tags<CR>",            desc = "List commands history" },
-		{ "<leader>fH", "<Cmd>Telescope highlights<CR>",           desc = "List commands history" },
+		{ "<leader>fc", "<Cmd>Telescope commands<CR>", desc = "Find commands" },
+		{ "<leader>ss", "<Cmd>Telescope grep_string<CR>", desc = "Grep strings" },
+		{ "<leader>:", "<Cmd>Telescope command_history<CR>", desc = "List commands history" },
+		{ "<leader>fh", "<Cmd>Telescope help_tags<CR>", desc = "List commands history" },
+		{ "<leader>fH", "<Cmd>Telescope highlights<CR>", desc = "List commands history" },
 		-- git
-		{ "<leader>gs", "<Cmd>Telescope git_status<CR>",           desc = "Git status" },
-		{ "<leader>gf", "<Cmd>Telescope git_files<CR>",            desc = "Git files" },
+		{ "<leader>gs", "<Cmd>Telescope git_status<CR>", desc = "Git status" },
+		{ "<leader>gf", "<Cmd>Telescope git_files<CR>", desc = "Git files" },
 	},
 	opts = function()
 		require("telescope").load_extension("aerial")
@@ -71,9 +74,9 @@ return {
 						["<C-d>"] = actions.preview_scrolling_down,
 					},
 					n = {
-						["q"] = actions.close
-					}
-				}
+						["q"] = actions.close,
+					},
+				},
 			},
 			pickers = {
 				find_files = {
@@ -85,9 +88,9 @@ return {
 								local dir = vim.fn.fnamemodify(selection.path, ":p:h")
 								require("telescope.actions").close(prompt_bunr)
 								vim.cmd(string.format("silent cd %s ", dir))
-							end
-						}
-					}
+							end,
+						},
+					},
 				},
 			},
 			extentions = {
@@ -95,10 +98,10 @@ return {
 					show_nesting = {
 						["_"] = false,
 						json = true,
-						yaml = true
-					}
-				}
-			}
+						yaml = true,
+					},
+				},
+			},
 		}
 	end,
 }

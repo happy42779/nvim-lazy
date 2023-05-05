@@ -14,7 +14,7 @@ return {
 	opts = {
 		highlight = { enable = true, disable = {} },
 		indent = { enable = false, disable = { "python" } },
-		-- context_commentstring = { enable = true, enable_autocmd = false },
+		context_commentstring = { enable = true, enable_autocmd = false },
 		ensure_installed = {
 			"bash",
 			"c",

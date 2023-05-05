@@ -4,13 +4,14 @@ return {
 	{
 		"folke/which-key.nvim",
 		init = function()
-			vim.o.timeout = false
-			vim.o.timeoutlen = 500
+			vim.o.timeout = true
+			vim.o.timeoutlen = 1000
 		end,
 	},
 	------------------------ Core -------------------
 	------------------------ UI ---------------------
-	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "MunifTanjim/nui.nvim",               lazy = true },
+	{ "nvim-tree/nvim-web-devicons",        lazy = true },
 	{ "lukas-reineke/indent-blankline.nvim" },
 	------------------ Editing ----------------------
 	{
@@ -21,7 +22,16 @@ return {
 	},
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
-	{ "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim" },
+	{
+		"folke/todo-comments.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+		opts = function()
+			local ft = require("Comment.ft")
+			return {
+				ft.set("verilog", "//%s"),
+			}
+		end,
+	},
 	{ "folke/trouble.nvim" },
 	{ "numToStr/Comment.nvim", config = true },
 }

@@ -9,6 +9,7 @@ return {
 			root_dir = require("null-ls.utils").root_pattern(".null-ls-root", "Makefile", ".git"),
 			sources = {
 				nls.builtins.formatting.stylua,
+				-- nls.builtins.diagnostics.codespell,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

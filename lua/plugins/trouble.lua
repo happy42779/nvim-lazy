@@ -4,9 +4,9 @@ return {
 	opts = { use_diagnostic_signs = true },
 	keys = {
 		{ "<leader>xx", "<Cmd>TroubleToggle document_diagnostics<CR>", desc = "Document diagnostics (Trouble)" },
-		{ "<leader>xX", "<Cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Workspace diagnostics (Trouble)" },
-		{ "<leader>xL", "<Cmd>TroubleToggle loclist<CR>", desc = "Location list (Trouble)" },
-		{ "<leader>xq", "<cmd>troubletoggle quickfix<cr>", desc = "quickfix list (Trouble)" },
+		-- { "<leader>xX", "<Cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Workspace diagnostics (Trouble)" },
+		{ "<leader>xl", "<Cmd>TroubleToggle loclist<CR>",              desc = "Location list (Trouble)" },
+		{ "<leader>xq", "<cmd>troubletoggle quickfix<cr>",             desc = "quickfix list (Trouble)" },
 		{
 			"[q",
 			function()

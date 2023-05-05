@@ -18,6 +18,7 @@ vim.opt.smarttab = true
 vim.opt.softtabstop = 4
 vim.opt.encoding = "UTF-8"
 vim.opt.langmenu = "en_US.UTF-8"
+vim.opt.spelllang = { "en_us" }
 -- vim.opt.language message = "zh_CN.UTF-8"
 vim.opt.fileencodings = "ucs-bom,utf-8,cp936,gb18030,big5"
 -- using ftplugin

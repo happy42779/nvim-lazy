@@ -44,6 +44,14 @@ return {
 			-- completion = {
 			-- 	completeopt = "menu, menuone, noinsert",
 			-- },
+			enabled = function()
+				local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+				if buftype == "prompt" then
+					return false
+				end
+				local context = require("cmp.config.context")
+				return not context.in_treesitter_capture("comment") and not context.in_syntax_group("comment")
+			end,
 			snippet = {
 				expand = function(args)
 					lsnip.lsp_expand(args.body)
@@ -57,17 +65,17 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({
-					i = function(fallback)
-						if cmp.visible() and cmp.get_active_entry() then
-							cmp.confirm({ behavior = cmp.SelectBehavior.Replace, select = false })
-						else
-							fallback()
-						end
-					end,
-					-- behavior = cmp.ConfirmBehavior.Replace,
-					-- select = true,
-					s = cmp.mapping.confirm({ select = true }),
-					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+					-- i = function(fallback)
+					-- 	if cmp.visible() and cmp.get_active_entry() then
+					-- 		cmp.confirm({ behavior = cmp.SelectBehavior.Replace, select = false })
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end,
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+					-- s = cmp.mapping.confirm({ select = true }),
+					-- c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 				}),
 				-- tab
 				["<Tab>"] = cmp.mapping(function(fallback)
@@ -114,31 +122,30 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
-				-- { name = "cmdline" }
 			}),
 			experimental = {
 				ghost_text = {
 					hl_group = "LspCodeLens",
 				},
 			},
+			cmdline = {
+				options = {
+					type = { "/", "?" },
+					sources = {
+						{ name = "buffer" },
+					},
+					{
+						type = ":",
+						sources = {
+							{ name = "path" },
+							{ name = "cmdline" },
+						},
+					},
+				},
+			},
 		})
 		-- recipe
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-		--
-		-- -- setup sources
-		cmp.setup.cmdline({ "/", "?" }, {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-				{ name = "cmdline" },
-			}),
-		})
 	end,
 }

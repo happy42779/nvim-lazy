@@ -16,8 +16,7 @@ map("n", "<leader>lz", "<Cmd>Lazy<CR>", { desc = "Luanch Lazy" })
 map("i", "<A-,>", "<backspace>", {})
 
 -- mapping Esc to something that's close to my thumb
-map("i", "jj", "<Esc>", {})
-map("i", "kk", "<Esc>", {})
+map("i", "jk", "<Esc>", {})
 
 -- split screen horizontally
 map("n", "<LEADER>|", ":vsplit ", { desc = "Vertical split" })

@@ -3,9 +3,9 @@ return {
 	version = "*",
 	opts = {
 		size = 20,
-		open_mapping = [[<c-\>]],
-		-- direction = "float",
-		direction = "horizontal",
+		open_mapping = [[<C-\>]],
+		direction = "float",
+		-- direction = "horizontal",
 		float_opts = {},
 	},
 }
