@@ -35,7 +35,7 @@ map("i", "<C-s>", "<ESC><cmd>:w<CR>", { desc = "Fast save buffer" })
 -- map("n", "L", "$", { desc = "Fast move to start of line" })
 
 -- Move to the end of line in the INSERT MODE,
--- really helpful when editting in a '', (), [] etc...
+-- really helpful when editing in a '', (), [] etc...
 map("i", "<A-a>", "<End>", { desc = "Fast move to end of line in insert mode" })
 -- Fast moving between windows
 map("n", "<C-h>", "<C-w>h", { desc = "Move to the left window" })

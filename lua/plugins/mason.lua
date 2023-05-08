@@ -1,14 +1,14 @@
 return {
-	'williamboman/mason.nvim',
+	"williamboman/mason.nvim",
 	cmd = "Mason",
-	keys = {{"<leader>cm", "<Cmd>Mason<CR>", desc = "Mason"}},
+	keys = { { "<leader>ms", "<Cmd>Mason<CR>", desc = "Mason" } },
 	opts = {
 		ensure_installed = {
 			"stylua",
 			"shfmt",
 			"clangd",
-			"bash-language-server"
-		}
+			"bash-language-server",
+		},
 	},
 	config = function(_, opts)
 		require("mason").setup(opts)
