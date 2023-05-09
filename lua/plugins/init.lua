@@ -1,4 +1,4 @@
--- this file holds the plugins that do not need to be mannually set
+-- this file holds the plugins that do not need to be manually set
 return {
 	------------------------ Basic  -------------------
 	{
@@ -32,6 +32,6 @@ return {
 			}
 		end,
 	},
-	{ "folke/trouble.nvim" },
+	-- { "folke/trouble.nvim" },
 	{ "numToStr/Comment.nvim", config = true },
 }

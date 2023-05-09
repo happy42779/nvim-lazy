@@ -3,7 +3,7 @@ return {
 	cmd = "Neotree",
 	branch = "v2.x",
 	keys = {
-		{ "<leader>fe", "<Cmd>Neotree toggle focus reveal_force_cwd<CR>", desc = "Open File Explorer" },
+		{ "<leader>e", "<Cmd>Neotree toggle focus reveal_force_cwd<CR>", desc = "Open File Explorer" },
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",

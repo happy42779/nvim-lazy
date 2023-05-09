@@ -3,12 +3,12 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{ "<space>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open diagnostics" },
-		{ "[e",       "<Cmd>lua vim.diagnostic.goto_prev()<CR>",  desc = "Go to previous diagnostics" },
-		{ "]e",       "<Cmd>lua vim.diagnostic.goto_next()<CR>",  desc = "Go to next daignostics" },
+		{ "[e", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous diagnostics" },
+		{ "]e", "<Cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next daignostics" },
 		{ "<space>q", "<Cmd>lua vim.diagnostic.setloclist()<CR>", desc = "Open diagnostics" },
 	},
 	dependencies = {
-		{ "folke/neodev.nvim",                opts = { experimental = { pathStrict = true } } },
+		{ "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
 		{ "williamboman/mason.nvim" },
 		{ "williamboman/mason-lspconfig.nvim" },
 		{ "hrsh7th/cmp-nvim-lsp" },
