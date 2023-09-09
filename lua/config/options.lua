@@ -1,5 +1,8 @@
 vim.opt.number = true
-vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
+vim.opt.relativenumber = true
+-- vim.opt.cursorline = true
+
+-- vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
 vim.opt.confirm = true
 
 vim.opt.formatoptions = "jcrqlnt"
@@ -7,7 +10,6 @@ vim.opt.formatoptions = "jcrqlnt"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 
-vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.mouse = "a"
 vim.opt.autoindent = true
@@ -24,10 +26,20 @@ vim.opt.fileencodings = "ucs-bom,utf-8,cp936,gb18030,big5"
 -- using ftplugin
 vim.opt.filetype = "plugin"
 
+vim.opt.incsearch = true
+-- vim.opt.hlsearch = false
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+-- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- vim.opt.undofile = true
+
+vim.opt.updatetime = 50
+
 -- whitespaces / indents
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-vim.opt.listchars:append("space:⋅")
+-- vim.opt.list = true
+-- vim.opt.listchars:append("eol:↴")
+-- vim.opt.listchars:append("space:⋅")
 
 vim.opt.termguicolors = true
 
