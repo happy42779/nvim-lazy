@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.animate",
 	event = "VeryLazy",
+	enabled = false,
 	opts = function()
 		local mouse_scrolled = false
 		for _, scroll in ipairs({ "Up", "Down" }) do

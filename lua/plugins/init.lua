@@ -12,14 +12,14 @@ return {
 	------------------------ UI ---------------------
 	{ "MunifTanjim/nui.nvim",               lazy = true },
 	{ "nvim-tree/nvim-web-devicons",        lazy = true },
-	{ "lukas-reineke/indent-blankline.nvim" },
+	{ "lukas-reineke/indent-blankline.nvim", enabled =false },
 	------------------ Editing ----------------------
-	{
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").add_default_mappings()
-		end,
-	},
+	-- {
+	-- 	"ggandor/leap.nvim",
+	-- 	config = function()
+	-- 		require("leap").add_default_mappings()
+	-- 	end,
+	-- },
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
 	{
