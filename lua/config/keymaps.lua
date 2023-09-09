@@ -13,7 +13,7 @@ vim.g.mapleader = ";"
 map("n", "<leader>lz", "<Cmd>Lazy<CR>", { desc = "Luanch Lazy" })
 
 -- mapping something easier to reach to backspace
-map("i", "<A-,>", "<backspace>", {})
+-- map("i", "<A-,>", "<backspace>", {})
 
 -- mapping Esc to something that's close to my thumb
 map("i", "jk", "<Esc>", {})
@@ -50,34 +50,38 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cR>", { desc = "Decrease window wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
 
 -- Samples learnt from ThePrimeagen
--- map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move blocks down" })
--- move lines
--- map("v", "K", ":m '>-2<CR>gv=gv", { desc = "Move blocks up" })
-
 map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move down" })
 map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move up" })
 map("i", "<A-j>", "<esc><cmd>m .+1<CR>==gi", { desc = "Move down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<CR>==gi", { desc = "Move up" })
-
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
-
--- close tabs
-map("n", "<A-w>", "<cmd>bdelete!<CR>", { desc = "Close current buffer" })
 
 -- merge lines without moving the cursor
 map("n", "J", "mzJ`z", { desc = "Merge lines" })
 -- scroll but with cursor not moved
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" })
-
 map("n", "<C-u>", "<C-U>zz", { desc = "Merge up" })
+map("n", "n", "nzzzv", {desc = "Move to next search"})
+map("n", "N", "nzzzv", {desc = "Move to next search"})
 
 -- paste over selected items and keep the copied content
-map("x", "<leader>p", [["_dP]], { desc = "paste" })
 map("n", "<leader>ax", "<cmd>!chmod +x %<CR>", { desc = "Add x mask" })
+map("x", "<leader>p", "\"_dP", { desc = "paste replace and keep current" })
+
+map("n", "<leader>y", "\"+y", { desc = "copy to system clipboard" })
+map("v", "<leader>y", "\"+y", { desc = "copy to system clipboard" })
+map("n", "<leader>Y", "\"+Y", { desc = "copy to system clipboard" })
+
+map("v", "<leader>d", "\"_d", { desc = "delete and copy to system clipboard" })
+map("n", "<leader>d", "\"_d", { desc = "delete and copy to system clipboard" })
 
 -- fast replace
 map("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- close tabs
+map("n", "<A-w>", "<cmd>bdelete!<CR>", { desc = "Close current buffer" })
+
 
 -- Fast split window and start a terminal
 -- with a set height
