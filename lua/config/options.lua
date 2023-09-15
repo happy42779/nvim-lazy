@@ -52,3 +52,6 @@ vim.opt.foldlevelstart = 99
 
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = true
+
+-- disabling lsp client log
+vim.lsp.set_log_level("off")
